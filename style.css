@@ -1,0 +1,245 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* Animated Background */
+
+body{
+color:white;
+background:linear-gradient(-45deg,#ff6a00,#ee0979,#00c6ff,#0072ff);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+}
+
+/* NAVBAR */
+
+nav a{
+margin:15px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+position:relative;
+}
+
+nav a::after{
+content:'';
+width:0;
+height:2px;
+background:cyan;
+position:absolute;
+left:0;
+bottom:-5px;
+transition:.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* SECTION */
+
+.section{
+min-height:100vh;
+padding:120px 10%;
+text-align:center;
+}
+
+/* HOME */
+
+.home{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.home h2{
+font-size:45px;
+}
+
+.home span{
+color:cyan;
+}
+
+.typing{
+font-size:24px;
+margin-top:10px;
+height:30px;
+}
+
+/* BUTTON */
+
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+background:cyan;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 10px cyan;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px cyan;
+}
+
+/* ABOUT */
+
+#about p{
+max-width:600px;
+margin:auto;
+margin-top:20px;
+line-height:1.6;
+}
+
+/* EDUCATION */
+
+#education p{
+font-size:18px;
+margin-top:20px;
+}
+
+/* SKILLS */
+
+.skill-box{
+max-width:600px;
+margin:auto;
+margin-top:30px;
+}
+
+.skill{
+margin:25px 0;
+text-align:left;
+}
+
+.bar{
+background:white;
+height:10px;
+border-radius:5px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:10px;
+background:cyan;
+width:0;
+animation:skill 2s forwards;
+}
+
+@keyframes skill{
+from{width:0}
+to{width:90%}
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(0,0,0,0.6);
+padding:25px;
+border-radius:12px;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+background:rgba(0,0,0,0.8);
+}
+
+/* SERVICES */
+
+#services p{
+margin:10px;
+font-size:18px;
+}
+
+/* CONTACT FORM */
+
+#contact form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:30px;
+}
+
+#contact input,
+#contact textarea{
+padding:12px;
+border:none;
+border-radius:8px;
+outline:none;
+font-size:15px;
+transition:.3s;
+}
+
+#contact input:focus,
+#contact textarea:focus{
+box-shadow:0 0 10px cyan;
+}
+
+#contact textarea{
+height:100px;
+resize:none;
+}
+
+#contact button{
+background:linear-gradient(45deg,cyan,blue);
+color:white;
+}
+
+#contact button:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px cyan;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:black;
+}
